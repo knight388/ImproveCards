@@ -1,0 +1,23 @@
+page-main-menu {
+    .circle-border {
+        width: 5rem;
+        height: 5rem;
+        border: solid 2px blue;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 5rem;
+        font-size: 2rem;
+        color: blue;
+        text-transform: uppercase;
+    }
+    
+    .user-fullname {
+        text-transform: capitalize;
+    }
+    .user-email {
+        color: gray;
+    }
+    .menuheader {
+        padding: 1rem;
+    }
+}

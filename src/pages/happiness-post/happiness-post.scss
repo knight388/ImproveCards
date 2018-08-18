@@ -1,0 +1,38 @@
+page-happiness-post {
+    .no-maring {
+        margin: 0px !important;
+    }
+
+    .item-ios .radio-ios {
+        border: solid 1px gray;
+        border-radius: 50%;
+        height: 21px;
+        width: 21px;
+    }
+
+    .fixed-content-textarea {
+        border: solid 1px gray;
+        height: 100px;
+        .scroll-content {
+            height: 100px;
+            padding: 5px !important;
+            padding-bottom: 0px !important;
+        }
+    }
+
+    textarea {
+        width: calc(100% - 4px) !important;
+        margin: 2px !important;
+        min-height: 90px;
+    }
+
+    ion-select {
+        max-width: 50%;
+    }
+
+    ion-footer {
+        ion-label {
+            color:goldenrod;
+        }
+    }
+}

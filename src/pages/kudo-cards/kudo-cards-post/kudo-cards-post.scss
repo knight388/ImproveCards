@@ -1,0 +1,88 @@
+page-kudo-cards-post {
+
+    ion-content {
+        %no-input-border {
+          border-bottom-color: transparent;
+          box-shadow: none;
+        }
+    
+        ion-item {
+          &.item-input {
+            &.item-md {
+              &.input-has-focus {
+                .item-inner {
+                  @extend %no-input-border;
+                }
+              }
+            }
+    
+            &.ng-invalid {
+              &.item-md {
+                &.ng-touched:not(.input-has-focus):not(.item-input-has-focus) {
+                  .item-inner {
+                    @extend %no-input-border;
+                  }
+                }
+              }
+            }
+    
+            &.ng-valid {
+              &.item-md {
+                &.input-has-value:not(.input-has-focus):not(.item-input-has-focus) {
+                  .item-inner {
+                    @extend %no-input-border;
+                  }
+                }
+              }
+            }
+          }
+        }
+    }
+
+    .fixed-content-textarea {
+        border: solid 1px gray;
+        height: 200px;
+        .scroll-content {
+            padding: 5px !important;
+            padding-bottom: 0px !important;
+        }
+    }
+
+    .card-img {
+        max-width: 70%;
+        max-height: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    textarea {
+        width: calc(100% - 4px) !important;
+        margin: 2px !important;
+        min-height: 140px;
+    }
+
+    .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus):last-child {
+      border: none;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+    }
+
+    .item-md.item-input.item-input-has-focus .item-inner,
+    .item-md.item-input.input-has-focus .item-inner {
+      border: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    .list-md .item-input.item-input-has-focus:last-child,
+    .list-md .item-input.input-has-focus:last-child {
+      border: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    .list-md .item-input:last-child {
+      border-bottom: none
+    }
+
+}

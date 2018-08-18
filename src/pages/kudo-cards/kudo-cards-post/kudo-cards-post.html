@@ -1,0 +1,57 @@
+<!--
+  Generated template for the KudoCardsPostPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Write your Kudo Card</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goToHelp()">
+        <ion-icon name="help-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form class="form" [formGroup]="validations_form" (ngSubmit)="postKudoCard(validations_form.value)">
+    <ion-list>
+        <ion-item>
+          <ion-label floating>Recipient Email Address:</ion-label>
+          <ion-input type="email" formControlName="recipientEmail" class="form-control" required [(ngModel)]="recipientEmail"></ion-input>
+        </ion-item>    
+        <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.recipientEmail">
+                <div class="error-message" *ngIf="validations_form.get('recipientEmail').hasError(validation.type) && (validations_form.get('recipientEmail').dirty || validations_form.get('recipientEmail').touched)">
+                  {{ validation.message }}
+                </div>
+            </ng-container>
+        </div>
+        <button type="button" ion-button full [color]="card.color">{{card.title}}</button>
+        <ion-card>
+            <img class="card-img" src="assets/imgs/cards/1.png" />
+        
+            <ion-card-content no-padding>
+              <ion-content class="fixed-content-textarea">
+                <ion-item no-lines no-padding>
+                  <ion-textarea autosize type="text" overflow-scroll="true" formControlName="kudotext" placeholder="Write your Kudo Card" [(ngModel)]="kudotext"></ion-textarea>
+                </ion-item>
+              </ion-content>
+        
+            </ion-card-content>
+            <ion-row>
+              <ion-col text-center>
+                <button ion-button round type="submit" [disabled]="!validations_form.valid">SHARE WY KUDO</button>
+              </ion-col>
+            </ion-row>
+        
+        </ion-card>
+    </ion-list>
+  </form>
+
+</ion-content>

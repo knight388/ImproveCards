@@ -1,0 +1,33 @@
+<!--
+  Generated template for the AddRoomPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add New Team</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="addRoom(validations_form.value)" [formGroup]="validations_form">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Enter Team Name</ion-label>
+        <ion-input type="text" formControlName="roomname" name="roomname" required=""></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.roomname">
+            <div class="error-message" *ngIf="validations_form.get('roomname').hasError(validation.type) && (validations_form.get('roomname').dirty || validations_form.get('roomname').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+      <ion-item>
+        <button ion-button full round color="secondary" type="submit" [disabled]="!validations_form.valid">Add</button>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

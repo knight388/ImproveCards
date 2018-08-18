@@ -1,0 +1,36 @@
+<!--
+  Generated template for the SigninPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Signin</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form class="form" [formGroup]="validations_form"  (ngSubmit)="enterEmail(validations_form.value)">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Enter your Email</ion-label>
+        <ion-input type="email" formControlName="email" class="form-control" required></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+      <ion-item>
+          <ion-label>Remember Me</ion-label>
+          <ion-checkbox formControlName="remember" name="remember"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <button ion-button full round color="secondary" type="submit" [disabled]="!validations_form.valid">Enter</button>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

@@ -1,0 +1,44 @@
+<ion-menu [content]="menuContent" type="overlay" persistent="true">
+  <ion-header>
+    <div class="menuheader">
+        <div class="circle-border">
+            {{alias}}
+        </div>
+        <ion-label class="user-fullname">
+            <span *ngFor="let name of username">
+            {{name}}
+            </span>
+        </ion-label>
+        <ion-label class="user-email">
+            {{data.email}}
+        </ion-label>
+        <ion-range [(ngModel)]="rangeValue" min="0" max="100"></ion-range>
+    </div>
+  </ion-header>
+  <ion-content>
+      <ion-list>
+            <button ion-item menuClose (click)="gotoWelcome()">
+                <ion-icon name="home"></ion-icon>
+                Home
+            </button>
+            <button ion-item menuClose (click)="gotoImprovPlay()">
+                <ion-icon name="ios-folder-outline"></ion-icon>
+                Improv Cards Play
+            </button>
+            <button ion-item menuClose (click)="gotoHappinessDoor()">
+                <ion-icon name="ios-school-outline"></ion-icon>
+                Happiness Door
+            </button>
+            <button ion-item menuClose (click)="gotoKudoCards()">
+                    <ion-icon name="card"></ion-icon>
+                Kudo Cards
+            </button>
+            <button ion-item menuClose (click)="signout()">
+                    <ion-icon name="log-out"></ion-icon>
+                Sign Out
+            </button>
+      </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #menuContent [root]="rootPage"></ion-nav>

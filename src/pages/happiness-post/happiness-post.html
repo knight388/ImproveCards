@@ -1,0 +1,84 @@
+<!--
+  Generated template for the HappinessPostPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>HappinessPost</ion-title>
+    <ion-buttons end>
+            <button ion-button icon-only (click)="goToHelp()">
+              <ion-icon name="help-circle"></ion-icon>
+            </button>
+          </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-buttons end>
+    <button ion-button round (click)="postFeedback()">Post it</button>
+  </ion-buttons>
+  <ion-label text-wrap>
+      Which picture shows how you are feeling now?
+  </ion-label>
+  <ion-grid>
+    <ion-row radio-group [(ngModel)]="happiness">
+      <ion-col col-4>
+          <ion-item no-lines no-padding>
+              <ion-thumbnail item-right>
+                  <img src="assets/imgs/happiness/happy.jpg">
+              </ion-thumbnail>
+              <ion-radio item-left value="happy" class="no-maring"></ion-radio>
+          </ion-item>
+      </ion-col>
+      <ion-col col-4>
+          <ion-item no-lines no-padding>
+              <ion-thumbnail item-right>
+                  <img src="assets/imgs/happiness/good.jpg">
+              </ion-thumbnail>
+              <ion-radio item-left value="good" class="no-maring"></ion-radio>
+          </ion-item>
+      </ion-col>
+      <ion-col col-4>
+          <ion-item no-lines no-padding>
+              <ion-thumbnail item-right>
+                  <img src="assets/imgs/happiness/bad.jpg">
+              </ion-thumbnail>
+              <ion-radio item-left value="bad" class="no-maring"></ion-radio>
+          </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-label>
+      Tell something:
+  </ion-label>
+  <!-- <ion-content class="fixed-content-textarea" #fixedContent> -->
+    <ion-item>
+            <ion-textarea type="text" overflow-scroll="true" placeholder="Enter Feedback" [(ngModel)]="feedback"></ion-textarea>
+    </ion-item>
+
+  <!-- </ion-content> -->
+    
+  
+  <ion-label>
+      Event: (optional)
+  </ion-label>
+  <ion-item no-lines>
+      <ion-select interface="popover" [(ngModel)]="eventopt">
+          <ion-option value="false">None</ion-option>
+          <ion-option value="The Sprint">The Sprint</ion-option>
+          <ion-option value="Sprint Planning">Sprint Planning</ion-option>
+      </ion-select>
+  </ion-item>
+
+  
+</ion-content>
+<ion-footer>
+    <ion-label padding>
+            Will be posted as anonymous.
+    </ion-label>
+</ion-footer>
